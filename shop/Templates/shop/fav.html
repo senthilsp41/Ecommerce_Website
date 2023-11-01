@@ -1,0 +1,37 @@
+{%extends 'shop/layouts/main.html' %}
+{% include 'shop/inc/slider.html' %}
+{% block content %}
+<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">Favourites</h4>
+                <hr style="border-color:#b8bfc2;">
+            </div>
+           
+            <table class="">
+                <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    
+                    
+                    <th>Amount</th>
+                    <th>Remove</th>
+                </tr>
+                {% for item in fav %}
+                <tr>
+                    <td><img src="{{item.product.product_image.url}}" height="75px" alt="{{item.product_name}}"></td>
+                    <td>{{item.product.name}}</td>
+                    <td>{{item.product.selling_price | stringformat:'d'}}</td>
+                    <td><a href="{% url 'remove_fav' item.id %}" onclick="return confirm('Are you Sure? To Remove')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>Remove</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+    </div>
+</section>
+    
+
+
+{% endblock content %}

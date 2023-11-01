@@ -1,0 +1,73 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Montserrat:wght@300;600&family=Poppins:ital@1&family=Roboto:wght@400;500&display=swap');
+
+
+
+html{
+    
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+
+
+}
+.carousel-item img{
+    object-fit: cover;
+    object-position: top;
+    height:50vh;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .carousel-item img {
+        height:20vh /* Hide images on mobile devices */
+    }
+    .navbar{
+        height:50px;
+    }
+}
+
+
+/* font-family: 'Crimson Text', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(218, 222, 225);
+    
+}
+a{
+    text-decoration: none;
+}
+
+.old_price{
+    font-weight: bold;
+    color:red;
+}
+.new_price{
+    font-weight: bold;
+    background-color: green;
+    color: antiquewhite;
+    padding: 2px;
+    border-radius: 5px;
+}
+.pic-box{
+    position: relative;
+
+}
+.hot{
+    background-color: orangered;
+    color:white;
+    font-weight: bold;
+    width:75px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    padding:5px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+.navbar{
+    height:10%;
+}

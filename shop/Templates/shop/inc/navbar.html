@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" style="height:8%; font-size:17px;">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="font-size: 18px;"><i class="fa fa-cart-plus"></i>Shophere</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto bg-primary">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa fa-home"></i>Home</a>
+          </li>
+          {% if request.user.is_authenticated %}
+          <li>
+            <a class="nav-link" aria-current="page" href="#"><i class='fa fa-user'></i>{{request.user}}</a>
+            </li>
+            <li>
+            <a class="nav-link" aria-current="page"  href="{% url 'logout' %}" ><i class='fa fa-sign-out'></i>Logout</a>
+          </li>
+          {% else %}
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}"><i class="fa fa-user"></i>Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in"></i>Login</a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'collections' %}"><i class="fa fa-cubes"></i>Collections</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'cart' %}"><i class="fa fa-shopping-cart"></i>Cart</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
